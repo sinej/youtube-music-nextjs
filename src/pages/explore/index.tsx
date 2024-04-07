@@ -11,6 +11,7 @@ const Explore = (props: Props) => {
  return (
   <>
     Explore
+      hell
   </>
  );
 }

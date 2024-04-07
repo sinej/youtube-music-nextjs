@@ -4,13 +4,13 @@ type Props = {
 
 };
 
-const Home = (props: Props) => {
+const Loading = (props: Props) => {
  const {} = props;
  return (
   <>
-    Home
+    Loading...
   </>
  );
 }
 
-export default Home;
+export default Loading;
