@@ -1,18 +1,19 @@
 import { sleep } from '@/lib/utils';
 import React from 'react';
+import Header from "@/components/elements/header";
 
 type Props = {
-
+    children: React.ReactNode;
 };
 
 const Page = async (props: Props) => {
- const {} = props;
+    const { children } = props;
 
- return (
-  <>
-    Home Page
-  </>
- );
+    return (
+        <div className="w-full h-full">
+            {children}
+        </div>
+    );
 }
 
 export default Page;
