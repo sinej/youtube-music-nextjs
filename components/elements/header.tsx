@@ -1,13 +1,39 @@
-import React from 'react';
+'use client'
+
+import React, {useState} from 'react';
 import Image from 'next/image';
 import UserIcon from "@/components/userIcon";
 import PagePadding from "@/components/elements/container/pagePadding";
 import {FaChromecast} from "react-icons/fa";
 import {FiSearch} from "react-icons/fi";
+import {Drawer, DrawerContent, DrawerFooter, DrawerDescription, DrawerHeader, DrawerClose, DrawerTitle, DrawerTrigger} from "@/components/ui/drawer";
+import Logo from "@/components/elements/logo";
+import Navigator from "@/components/elements/navigator";
 
 type Props = {
     children: React.ReactNode;
 };
+
+const HeaderDrawer = ({ children }: Props) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <Drawer direction="left" open={isOpen} onOpenChange={setIsOpen}>
+            <DrawerTrigger>{children}</DrawerTrigger>
+            <DrawerContent className="w-[240px] h-full">
+                {/*  로고  */}
+                {/*  네비게이션, 재생목록  */}
+                <div className="py-3">
+                    <div className="px-3">
+                        <Logo isInDrawer={true}
+                              onClickClose={() => setIsOpen(false)}
+                        />
+                    </div>
+                    <Navigator />
+                </div>
+              </DrawerContent>
+        </Drawer>
+    )
+}
 
 const Header = (props: Props) => {
     const { children } = props;
@@ -31,7 +57,7 @@ const Header = (props: Props) => {
                 <PagePadding>
                     <div className="flex flex-row justify-between items-center h-[64px]">
                         {/*SearchSection*/}
-                        <article className="h-[42px] min-w-[480px] flex flex-row items-center bg-[rgba(0,0,0,0.14)] rounded-2xl px-[16px] gap-[16px]">
+                        <article className="h-[42px] min-w-[480px] hidden lg:flex flex-row items-center bg-[rgba(0,0,0,0.14)] rounded-2xl px-[16px] gap-[16px]">
                             <div>
                                 <FiSearch size={24}/>
                             </div>
@@ -40,6 +66,13 @@ const Header = (props: Props) => {
                                    className="h-full w-full bg-transparent"
                             />
                         </article>
+
+                        <HeaderDrawer>
+                            <article className="lg:hidden">
+                                <Logo />
+                            </article>
+                        </HeaderDrawer>
+
                         <article className="flex flex-row gap-6 items-center">
                             <FaChromecast size={26} />
                             <UserIcon />

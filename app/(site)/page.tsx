@@ -2,16 +2,12 @@ import { sleep } from '@/lib/utils';
 import React from 'react';
 import Header from "@/components/elements/header";
 
-type Props = {
-    children: React.ReactNode;
-};
 
-const Page = async (props: Props) => {
-    const { children } = props;
+const Page = async () => {
 
     return (
-        <div className="w-full h-full">
-            {children}
+        <div className="min-h-[600px]">
+
         </div>
     );
 }
