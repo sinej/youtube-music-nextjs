@@ -12,7 +12,7 @@ const Sidebar = (props: Props) => {
         <aside className="flex flex-row h-full">
             <nav className="w-[240px] border-r-[1px] border-neutral-600 hidden lg:block">
                 <div className="p-[24px]">
-                    <Logo />
+                    <Logo isInDrawer={true} />
                 </div>
                 <div>
                     <Navigator />

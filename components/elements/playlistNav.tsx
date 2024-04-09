@@ -3,11 +3,18 @@ import { IoMdPlayCircle } from "react-icons/io";
 import IconButton from "@/components/elements/button/iconButton";
 
 type Props = {
-    owner: string;
-    songList: string;
     id: number;
+    owner: string;
     playlistName: string;
-};
+    songList: {
+        name: string;
+        channelId: number;
+        channel: string;
+        src: string;
+        imageSrc: string;
+    }[];
+    key: string;
+}
 
 const PlaylistNav = (props: Props) => {
     const { owner, songList, id, playlistName } = props;

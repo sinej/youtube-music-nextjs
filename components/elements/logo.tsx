@@ -9,7 +9,7 @@ import {IoCloseOutline} from "react-icons/io5";
 
 type Props = {
     isInDrawer: boolean;
-    onClickClose: () => void;
+    onClickClose?: () => void;
 };
 
 const Logo = (props: Props) => {

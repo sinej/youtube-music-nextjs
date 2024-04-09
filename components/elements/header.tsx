@@ -39,11 +39,12 @@ const HeaderDrawer = ({ children }: Props) => {
 const Header = (props: Props) => {
     const { children } = props;
     const [isScrolled, setIsScrolled] = useState(false);
-    const headRef=  useRef();
+    const headRef=  useRef<HTMLHeadElement>(null);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollValue = headRef?.current?.scrollTop;
+            const scrollValue: number | undefined | any = headRef?.current?.scrollTop;
             setIsScrolled(scrollValue > 0);
         }
 
@@ -86,7 +87,9 @@ const Header = (props: Props) => {
 
                         <HeaderDrawer>
                             <article className="lg:hidden">
-                                <Logo />
+                                <Logo isInDrawer={true}
+                                      onClickClose={() => setIsOpen(false)}
+                                />
                             </article>
                         </HeaderDrawer>
 
