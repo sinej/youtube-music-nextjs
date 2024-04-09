@@ -1,32 +1,22 @@
 import { sleep } from '@/lib/utils';
 import React from 'react';
 import Header from "@/components/elements/header";
+import Category from "@/app/(site)/components/category";
+import PagePadding from "@/components/elements/container/pagePadding";
 
 
 const Page = async () => {
 
     return (
-        <div className="min-h-[600px]">
-            <div className="h-[500px] bg-neutral-700">
-                homepage
-            </div>
-            <div className="h-[500px] bg-neutral-700">
-                homepage
-            </div>
-            <div className="h-[500px] bg-neutral-700">
-                homepage
-            </div>
-            <div className="h-[500px] bg-neutral-700">
-                homepage
-            </div>
-            <div className="h-[500px] bg-neutral-700">
-                homepage
-            </div>
-            <div className="h-[500px] bg-neutral-700">
-                homepage
-            </div>
+        <PagePadding>
+            <div className="min-h-[600px] z-20 relative">
+              <div className="mt-9"></div>
+                <Category />
+                <div className="mt-12">
 
-        </div>
+                </div>
+            </div>
+        </PagePadding>
     );
 }
 

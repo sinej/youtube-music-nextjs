@@ -10,6 +10,7 @@ import {Drawer, DrawerContent, DrawerFooter, DrawerDescription, DrawerHeader, Dr
 import Logo from "@/components/elements/logo";
 import Navigator from "@/components/elements/navigator";
 import {cn} from "@/lib/utils";
+import useUIState from "@/hooks/useUIState";
 
 type Props = {
     children: React.ReactNode;
@@ -38,6 +39,7 @@ const HeaderDrawer = ({ children }: Props) => {
 
 const Header = (props: Props) => {
     const { children } = props;
+    const { headerImageSrc } = useUIState()
     const [isScrolled, setIsScrolled] = useState(false);
     const headRef=  useRef<HTMLHeadElement>(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +62,7 @@ const Header = (props: Props) => {
             {/*bgSection*/}
             <section className="absolute top-0 w-full">
                 <div className="relative h-[400px] w-full">
-                    <Image src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    <Image src={headerImageSrc || "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                            fill
                            alt="mediaItem"
                            className="object-cover"
