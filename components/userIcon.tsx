@@ -15,4 +15,4 @@ const UserIcon = (props: Props) => {
     );
 }
 
-export default UserIcon; 
+export default UserIcon;
