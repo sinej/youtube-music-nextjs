@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
 import UserIcon from "@/components/userIcon";
 import PagePadding from "@/components/elements/container/pagePadding";
@@ -9,6 +9,7 @@ import {FiSearch} from "react-icons/fi";
 import {Drawer, DrawerContent, DrawerFooter, DrawerDescription, DrawerHeader, DrawerClose, DrawerTitle, DrawerTrigger} from "@/components/ui/drawer";
 import Logo from "@/components/elements/logo";
 import Navigator from "@/components/elements/navigator";
+import {cn} from "@/lib/utils";
 
 type Props = {
     children: React.ReactNode;
@@ -37,8 +38,24 @@ const HeaderDrawer = ({ children }: Props) => {
 
 const Header = (props: Props) => {
     const { children } = props;
+    const [isScrolled, setIsScrolled] = useState(false);
+    const headRef=  useRef();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollValue = headRef?.current?.scrollTop;
+            setIsScrolled(scrollValue > 0);
+        }
+
+        headRef?.current?.addEventListener("scroll", handleScroll)
+        return () => {
+            headRef?.current?.removeEventListener("scroll", handleScroll)
+        }
+    }, []);
+
+
     return (
-        <header className="relative overflow-y-auto w-full h-full">
+        <header className="relative overflow-y-auto w-full h-full" ref={headRef}>
             {/*bgSection*/}
             <section className="absolute top-0 w-full">
                 <div className="relative h-[400px] w-full">
@@ -53,11 +70,11 @@ const Header = (props: Props) => {
             </section>
 
             {/*SearchSection*/}
-            <section className="sticky">
+            <section className={cn("sticky top-0 left-0 z-10", isScrolled && "bg-black")}>
                 <PagePadding>
                     <div className="flex flex-row justify-between items-center h-[64px]">
                         {/*SearchSection*/}
-                        <article className="h-[42px] min-w-[480px] hidden lg:flex flex-row items-center bg-[rgba(0,0,0,0.14)] rounded-2xl px-[16px] gap-[16px]">
+                        <article className={cn("h-[42px] min-w-[480px] hidden lg:flex flex-row items-center bg-[rgba(0,0,0,0.14)] rounded-2xl px-[16px] gap-[16px]", isScrolled && "border border-neutral-500")}>
                             <div>
                                 <FiSearch size={24}/>
                             </div>
