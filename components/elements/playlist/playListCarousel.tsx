@@ -1,6 +1,7 @@
 import React from 'react';
 import {Playlist} from "@/types";
-import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from '../ui/carousel';
+import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from '../../ui/carousel';
+import PlayListCard from "@/components/elements/playlist/playListCard";
 
 interface PlayListCarouselProps {
     title: string;
@@ -30,12 +31,12 @@ const PlayListCarousel: React.FC<PlayListCarouselProps> = (props: PlayListCarous
                     </div>
                 </div>
                 <CarouselContent>
-                    {Array.from({length: 5}).map((_, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                            <div className="p-1">
-                                Card
-                            </div>
-                        </CarouselItem>
+                    {playlistArray?.map((playlist, index) => (
+                                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                                    <div className="p-1">
+                                        <PlayListCard {...playlist} />
+                                    </div>
+                                </CarouselItem>
                     ))}
                 </CarouselContent>
             </Carousel>

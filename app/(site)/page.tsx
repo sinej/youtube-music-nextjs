@@ -3,7 +3,7 @@
 import React from 'react';
 import Category from "@/app/(site)/components/category";
 import PagePadding from "@/components/elements/container/pagePadding";
-import PlayListCarousel from "@/components/elements/playListCarousel";
+import PlayListCarousel from "@/components/elements/playlist/playListCarousel";
 import {dummyPlaylistArray} from "@/lib/dummyData";
 import UserIcon from "@/components/userIcon";
 

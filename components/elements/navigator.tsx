@@ -7,7 +7,7 @@ import { GoHome } from "react-icons/go";
 import { usePathname, useSearchParams } from "next/navigation";
 import {cn} from "@/lib/utils";
 import {dummyPlaylistArray} from "@/lib/dummyData";
-import PlaylistNav from "@/components/elements/playlistNav";
+import PlayListNav from "@/components/elements/playlist/playListNav";
 
 type RouteProps = {
     icon: React.ReactNode;
@@ -79,7 +79,7 @@ const Navigator = () => {
             <section>
                 <ul className="flex flex-col">
                 {dummyPlaylistArray.map((playlist) =>
-                    <PlaylistNav key={`play-${playlist.id}`} {...playlist} />
+                    <PlayListNav key={`play-${playlist.id}`} {...playlist} />
                 )}
                 </ul>
             </section>

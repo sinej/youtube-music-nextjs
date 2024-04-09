@@ -16,7 +16,7 @@ type Props = {
     key: string;
 }
 
-const PlaylistNav = (props: Props) => {
+const PlayListNav = (props: Props) => {
     const { owner, songList, id, playlistName } = props;
 
     const onClickPlay = () => {
@@ -40,4 +40,4 @@ const PlaylistNav = (props: Props) => {
     );
 }
 
-export default PlaylistNav;
+export default PlayListNav;
