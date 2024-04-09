@@ -97,7 +97,7 @@ const Header = (props: Props) => {
 
                         <article className="flex flex-row gap-6 items-center">
                             <FaChromecast size={26} />
-                            <UserIcon />
+                            <UserIcon size="md" />
                         </article>
                     </div>
                 </PagePadding>
