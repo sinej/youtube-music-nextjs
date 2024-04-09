@@ -8,8 +8,6 @@ type Props = {
 const Page = async (props: Props) => {
  const {} = props;
 
- await sleep(2000)
-
  return (
   <>
     Home Page
