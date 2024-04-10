@@ -9,15 +9,14 @@ interface GenreListCarouselProps {
     title: string;
     subTitle?: string;
     Thumbnail?: React.ReactNode;
-    genreList: TopSong[];
+    genreList: any[];
 };
 
 const GenreColumn = ({ genreList = [] }: {genreList: string[]}) => {
-    console.log("genreList", genreList)
     return (
         <div className="flex flex-col gap-4">
-            {genreList.map((genre: string) =>
-                <GenreListCard genre={genre} />
+            {genreList.map((genre: string, index) =>
+                <GenreListCard genre={genre} key={index} />
             )}
         </div>
     )
@@ -27,7 +26,7 @@ const GenreListCarousel: React.FC<GenreListCarouselProps> = (props: GenreListCar
     const { title, subTitle, genreList, Thumbnail } = props;
 
     const chunkedGenreList = chunkArray(genreList, 4) as string[][];
-console.log("chunkedGenreList", chunkedGenreList)
+
     return (
         <div className="w-full">
             <Carousel className="w-full">
@@ -47,13 +46,13 @@ console.log("chunkedGenreList", chunkedGenreList)
                     </div>
                 </div>
                 <CarouselContent>
-                    {chunkedGenreList?.map((genreList, index: number) => {
-                                return <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                    {chunkedGenreList?.map((genreList, index: number) =>
+                                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
                                     <div className="p-1">
                                         <GenreColumn genreList={genreList} />
                                     </div>
                                 </CarouselItem>
-                    })}
+                    )}
                 </CarouselContent>
             </Carousel>
         </div>

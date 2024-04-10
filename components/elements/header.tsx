@@ -6,7 +6,7 @@ import UserIcon from "@/components/userIcon";
 import PagePadding from "@/components/elements/container/pagePadding";
 import {FaChromecast} from "react-icons/fa";
 import {FiSearch} from "react-icons/fi";
-import {Drawer, DrawerContent, DrawerFooter, DrawerDescription, DrawerHeader, DrawerClose, DrawerTitle, DrawerTrigger} from "@/components/ui/drawer";
+import {Drawer, DrawerContent, DrawerTrigger} from "@/components/ui/drawer";
 import Logo from "@/components/elements/logo";
 import Navigator from "@/components/elements/navigator";
 import {cn} from "@/lib/utils";

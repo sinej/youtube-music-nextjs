@@ -8,6 +8,7 @@ import {getRandomElementFromArray} from "@/lib/utils";
 import HeaderBgChanger from "@/components/elements/container/headerBgChanger";
 import PlayListHead from "@/components/elements/playlist/playListHead";
 import SongListCardRowExpand from "@/components/elements/playlist/songListCardRowExpand";
+import {Song} from "@/types";
 
 interface Props {
     searchParams: {
@@ -30,7 +31,7 @@ const Page = async (props: Props) => {
             <PlayListHead {...playList} />
             <div className="mt-12"></div>
             <section className="flex flex-col gap-2">
-            {playList.songList.map((song, index) =>
+            {playList.songList.map((song: Song, index: number) =>
                 <SongListCardRowExpand {...song} key={index} />
             )}
             </section>

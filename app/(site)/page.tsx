@@ -8,7 +8,7 @@ import {dummyPlaylistArray} from "@/lib/dummyData";
 import UserIcon from "@/components/userIcon";
 
 
-const Page = async () => {
+const Page = () => {
 
     const dummyPlaylistArray1 = [...dummyPlaylistArray];
 

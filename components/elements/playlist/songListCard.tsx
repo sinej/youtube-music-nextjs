@@ -12,7 +12,6 @@ interface SongListCardProps {
     imageSrc: string;
     prevRank: string;
     rank: string;
-
 }
 const SongListCard: React.FC<SongListCardProps> = (props: SongListCardProps) => {
     const { name, imageSrc, rank, prevRank  } = props;
