@@ -1,17 +1,22 @@
 import React from 'react';
-import {Playlist} from "@/types";
+import {TopSong} from "@/types";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from '../../ui/carousel';
-import PlayListCard from "@/components/elements/playlist/playListCard";
 
-interface PlayListCarouselProps {
+interface SongListCarouselProps {
     title: string;
     subTitle?: string;
     Thumbnail?: React.ReactNode;
-    playlistArray?: Playlist[];
+    songListTop10?: TopSong[];
 };
 
-const PlayListCarousel: React.FC<PlayListCarouselProps> = (props: PlayListCarouselProps) => {
-    const { title, subTitle, playlistArray, Thumbnail } = props;
+const SongColumn = ({ prevRank, rank }: TopSong) => {
+    return (
+        <div></div>
+    )
+}
+
+const SongListCarousel: React.FC<SongListCarouselProps> = (props: SongListCarouselProps) => {
+    const { title, subTitle, songListTop10, Thumbnail } = props;
     return (
         <div className="w-full">
             <Carousel className="w-full">
@@ -31,10 +36,10 @@ const PlayListCarousel: React.FC<PlayListCarouselProps> = (props: PlayListCarous
                     </div>
                 </div>
                 <CarouselContent>
-                    {playlistArray?.map((playlist, index) => (
+                    {songListTop10?.map((songList: TopSong, index: number) => (
                                 <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                                     <div className="p-1">
-                                        <PlayListCard {...playlist} />
+                                        <SongColumn {...songList} />
                                     </div>
                                 </CarouselItem>
                     ))}
@@ -44,4 +49,4 @@ const PlayListCarousel: React.FC<PlayListCarouselProps> = (props: PlayListCarous
     );
 }
 
-export default PlayListCarousel;
+export default SongListCarousel;

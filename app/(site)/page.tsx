@@ -16,18 +16,46 @@ const Page = async () => {
         <PagePadding>
             <div className="min-h-[600px] z-20 relative">
                 <div className="mt-9"></div>
-                <Category />
+                <Category/>
                 <div className="mt-12">
-                {/* carousel */}
-                <PlayListCarousel playlistArray={[...dummyPlaylistArray1]}
-                                  Thumbnail={
-                                    <div className="w-14 h-14">
-                                      <UserIcon size="lg" />
-                                    </div>
-                                  }
-                                  title="다시 듣기"
-                                  subTitle="도도"
-                />
+                    {/* carousel */}
+                    <PlayListCarousel playlistArray={[...dummyPlaylistArray1]}
+                                      Thumbnail={
+                                          <div className="w-14 h-14">
+                                              <UserIcon size="lg"/>
+                                          </div>
+                                      }
+                                      title="다시 듣기"
+                                      subTitle="도도"
+                    />
+                </div>
+
+                <div className="mt-12">
+                    {/* carousel */}
+                    <PlayListCarousel playlistArray={[...dummyPlaylistArray1]}
+                                      title="잊고 있던 좋은 음악"
+                    />
+                </div>
+
+                <div className="mt-12">
+                    {/* carousel */}
+                    <PlayListCarousel playlistArray={[...dummyPlaylistArray1]}
+                                      title="Pop"
+                    />
+                </div>
+
+                <div className="mt-12">
+                    {/* carousel */}
+                    <PlayListCarousel playlistArray={[...dummyPlaylistArray1]}
+                                      title="R&B 무드"
+                    />
+                </div>
+
+                <div className="mt-12">
+                    {/* carousel */}
+                    <PlayListCarousel playlistArray={[...dummyPlaylistArray1]}
+                                      title="최신 음악"
+                    />
                 </div>
             </div>
         </PagePadding>
