@@ -31,7 +31,7 @@ const PlayListCard = (props: Playlist) => {
                 <Image src={imgSrc}
                        alt="thumbnail"
                        fill={true}
-                       className="object-cover"
+                       className="object-cover rounded-sm"
                 />
 
                 <div className="hidden relative group-hover:block bg-gradient-to-b from-[rgba(0,0,0,.7)] top-0 w-full h-[136px]">

@@ -18,7 +18,7 @@ const Sidebar = (props: Props) => {
                     <Navigator />
                 </div>
             </nav>
-            <div className="flex-1">
+            <div className="w-full lg:w-[calc(100%_-_240px)]">
                 {children}
             </div>
         </aside>

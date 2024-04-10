@@ -103,7 +103,7 @@ const Header = (props: Props) => {
                 </PagePadding>
             </section>
 
-            <section>{children}</section>
+            <section className="relative">{children}</section>
         </header>
     );
 }

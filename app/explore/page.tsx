@@ -1,9 +1,10 @@
 import React from 'react';
 import PagePadding from "@/components/elements/container/pagePadding";
 import Category from "@/app/explore/components/category";
-import {getAllPlaylist, getSongListTop10} from "@/lib/dummyData";
+import {dymmyGenreList, getAllPlaylist, getSongListTop10} from "@/lib/dummyData";
 import PlayListCarousel from "@/components/elements/playlist/playListCarousel";
 import SongListCarousel from "@/components/elements/playlist/songListCarousel";
+import GenreListCarousel from "@/components/elements/playlist/genreListCarousel";
 
 type Props = {
 
@@ -28,6 +29,10 @@ const Page = async (props: Props) => {
             <div className="mt-20" />
             <SongListCarousel title="인기곡"
                               songListTop10={songListTop10}
+            />
+            <div className="mt-20" />
+            <GenreListCarousel title="분위기 및 장르"
+                               genreList={dymmyGenreList}
             />
 
         </PagePadding>
