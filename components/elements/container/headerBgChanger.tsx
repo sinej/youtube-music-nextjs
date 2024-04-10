@@ -2,7 +2,6 @@
 
 import React, {useEffect} from 'react';
 import useUIState from "@/hooks/useUIState";
-import Image from "next/image";
 
 interface Props {
     imageSrc: string;
@@ -15,13 +14,12 @@ const HeaderBgChanger = (props: Props) => {
 
     useEffect(() => {
         if(imageSrc) setHeaderImageSrc(imageSrc);
-    }, []);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [imageSrc]);
 
 
     return (
-        <>
-            <Image src={imageSrc} alt="image"/>
-        </>
+        <></>
     );
 }
 
