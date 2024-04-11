@@ -22,7 +22,7 @@ const SongColumn = ({ songList = [] }: {songList: TopSong[]}) => {
     return (
         <div className="flex flex-col gap-4">
             {songList.map((song: any, index: number) => (
-                <SongListCard {...song} key={index} />
+                <SongListCard song={song} {...song} key={index} />
             ))}
         </div>
     )
