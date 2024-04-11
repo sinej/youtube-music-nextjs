@@ -22,7 +22,6 @@ const Page = async (props: Props) => {
 
     const imageSrc = getRandomElementFromArray(channel.songList)?.imageSrc;
 
-    console.log("channel.playlistArray", channel.playlistArray)
     return (
         <PagePadding>
             <HeaderBgChanger imageSrc={imageSrc}/>

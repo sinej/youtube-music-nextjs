@@ -8,8 +8,11 @@ import {useRouter} from "next/navigation";
 import { MdMoreVert } from "react-icons/md";
 import { FiPlay } from "react-icons/fi";
 import IconButton from "@/components/elements/button/iconButton";
+import usePlayerState from "@/hooks/usePlayerState";
+import {createSecretKey} from "node:crypto";
 
 const PlayListCard = (props: Playlist) => {
+    const { addSongList } = usePlayerState();
     const { id, owner, playlistName, songList} = props;
     const { push } = useRouter();
     const songListLen = songList?.length;
@@ -19,8 +22,9 @@ const PlayListCard = (props: Playlist) => {
         push(`/playlist?list=${id}`)
     }
 
-    const onClickPlay = () => {
-        // TODO: Playing
+    const onClickPlay = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        addSongList(songList)
     }
 
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoMdPlayCircle } from "react-icons/io";
 import IconButton from "@/components/elements/button/iconButton";
+import usePlayerState from "@/hooks/usePlayerState";
 
 type Props = {
     id: number;
@@ -17,10 +18,12 @@ type Props = {
 }
 
 const PlayListNav = (props: Props) => {
+    const { addSongList } = usePlayerState();
     const { owner, songList, id, playlistName } = props;
 
-    const onClickPlay = () => {
-        // TODO: play music
+    const onClickPlay = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        addSongList(songList)
     }
 
     return (

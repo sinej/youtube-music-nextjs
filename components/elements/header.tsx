@@ -73,7 +73,7 @@ const Header = (props: Props) => {
             </section>
 
             {/*SearchSection*/}
-            <section className={cn("sticky top-0 left-0 z-10", isScrolled && "bg-black")}>
+            <section className={cn("sticky top-0 left-0 z-50", isScrolled && "bg-black")}>
                 <PagePadding>
                     <div className="flex flex-row justify-between items-center h-[64px]">
                         {/*SearchSection*/}
