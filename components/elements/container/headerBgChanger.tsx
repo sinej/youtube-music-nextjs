@@ -20,7 +20,6 @@ const HeaderBgChanger = (props: Props) => {
 
     return (
         <>
-            <Image src={imageSrc} alt="image"/>
         </>
     );
 }
