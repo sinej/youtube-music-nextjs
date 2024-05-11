@@ -21,9 +21,19 @@ Redux 보다는 간결하면서 자동으로 state를 생성하고 state가 변�
 - [x] playlist 페이지
 - [x] channel 페이지
 - [x] player streaming 추가
-- [ ] API 셋팅
-- [ ] API 각 페이지 별 API 추가
+- [x] API 셋팅
+- [x] API 각 페이지 별 API 추가
+
+
+### skills
+Next.js
+Zustand
+ytmusic-api
+radix-ui
 
 ### 성능테스트
 1차: 2024.04.11 - UI
 <img src="./public/lighthouse-230411.png">
+
+
+### 회고
