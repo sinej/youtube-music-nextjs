@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import {ThemeProvider} from "@/providers/themeProvider";
 import {sleep} from "@/lib/utils";
 import Sidebar from "@/components/side/sidebar";
@@ -18,6 +19,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const queryClient = new QueryClient()
+
 
   return (
     <html lang="ko">
@@ -28,10 +31,13 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
+          <QueryClientProvider client={queryClient}>
+
           <Sidebar>
             {children}
           </Sidebar>
           <PlayerWrapper />
+          </QueryClientProvider>
         </ThemeProvider>
       </body>
     </html>
